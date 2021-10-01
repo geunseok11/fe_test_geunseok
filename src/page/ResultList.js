@@ -27,27 +27,6 @@ const ResultList = (props) => {
     return price.substr(0, price.length - 3) + " 원";
   };
 
-  const data = {
-    page1: "",
-    page2: "?page=2",
-    page3: "?page=3",
-  };
-
-  // const onPressPage1 = useCallback(() => {
-  //   setPage(data.page1);
-  //   dispatch(loadResult(data.page1));
-  // }, [page]);
-
-  // const onPressPage2 = useCallback(() => {
-  //   setPage(data.page2);
-  //   dispatch(loadResult(data.page2));
-  // }, [page]);
-
-  // const onPressPage3 = useCallback(() => {
-  //   setPage(data.page3);
-  //   dispatch(loadResult(data.page3));
-  // }, [page]);
-
   return (
     <React.Fragment>
       <div>
@@ -65,29 +44,18 @@ const ResultList = (props) => {
               <td>조회수</td>
             </th>
           </thead>
-          {/* <tbody>
-            {searchCount !== 0 && searchCount && searchCount !== resultCount
-              ? searchList &&
-                searchList.map((el) => (
-                  <th key={el.id}>
-                    <td>{el.id}</td>
-                    <td>{el.title}</td>
-                    <td>{getFormatPrice(el.price)}</td>
-                    <td>{getFormatDate(el.created_at)}</td>
-                    <td>{el.rate}</td>
-                  </th>
-                ))
-              : resultList &&
-                resultList.map((el) => (
-                  <th key={el.id}>
-                    <td>{el.id}</td>
-                    <td>{el.title}</td>
-                    <td>{getFormatPrice(el.price)}</td>
-                    <td>{getFormatDate(el.created_at)}</td>
-                    <td>{el.rate}</td>
-                  </th>
-                ))}
-          </tbody> */}
+          <tbody>
+            {resultList &&
+              resultList.map((el) => (
+                <th key={el.id}>
+                  <td>{el.id}</td>
+                  <td>{el.title}</td>
+                  <td>{getFormatPrice(el.price)}</td>
+                  <td>{getFormatDate(el.created_at)}</td>
+                  <td>{el.rate}</td>
+                </th>
+              ))}
+          </tbody>
         </table>
       </div>
       <div

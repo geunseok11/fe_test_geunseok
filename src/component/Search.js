@@ -26,9 +26,7 @@ const Search = (props) => {
   return (
     <form onSubmit={onPressSearch}>
       <input type="text" value={value} onChange={handleChange} />
-      <button type="submit" to={"/find"}>
-        검색
-      </button>
+      <button type="submit">검색</button>
     </form>
   );
 };
